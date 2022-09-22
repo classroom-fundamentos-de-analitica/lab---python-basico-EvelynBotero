@@ -19,7 +19,7 @@ def pregunta_01():
 
     Rta/
     214
-    hola
+
     """
     return
 
