@@ -5,13 +5,10 @@ Calificación del laboratorio
 
 import sys
 import preguntas
-import csv
+
 
 def test_01():
     assert preguntas.pregunta_01() == 214
-with open()
-lista []
-
 
 
 def test_02():
