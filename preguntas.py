@@ -80,10 +80,15 @@ def pregunta_03():
     ]
 
     """
-    listaaux=[[],[],[],[],[]]
-    return
-
-
+    dic = {}
+    for i in listadef:
+        if(i != ''):
+            lineSplit = i.split("\t")
+            le = lineSplit[0]
+            dic[le] = dic.get(le, 0) + int(lineSplit[1])
+    lista = (list(dic.items()))
+    return sorted(lista)
+print(pregunta_03())
 def pregunta_04():
     """
     La columna 3 contiene una fecha en formato `YYYY-MM-DD`. Retorne la cantidad de
