@@ -81,11 +81,11 @@ def pregunta_03():
 
     """
     dic = {}
-    for i in listadef:
-        if(i != ''):
-            lineSplit = i.split("\t")
-            le = lineSplit[0]
-            dic[le] = dic.get(le, 0) + int(lineSplit[1])
+    for linea in listadef:
+        if(linea != ''):
+            x=linea[0].split('\t')
+            le = x[0]
+            dic[le] = dic.get(le, 0) + int(x[1])
     lista = (list(dic.items()))
     return sorted(lista)
 print(pregunta_03())
