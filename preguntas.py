@@ -64,7 +64,6 @@ def pregunta_02():
 
     return listap2
 
-
 def pregunta_03():
     """
     Retorne la suma de la columna 2 por cada letra de la primera columna como una lista
@@ -80,15 +79,17 @@ def pregunta_03():
     ]
 
     """
-    dic = {}
-    for linea in listadef:
-        if(linea != ''):
-            x=linea[0].split('\t')
-            le = x[0]
-            dic[le] = dic.get(le, 0) + int(x[1])
-    lista = (list(dic.items()))
-    return sorted(lista)
-print(pregunta_03())
+    listaa = [z[0] for z in listadef[0:]]
+    listaa = sorted(list(set(listaa)))
+
+    listasum= []
+    for i in listaa:
+        w = [int(z[1]) for z in listadef[0:] if z[0] == i]
+        listasum.append(sum(w))
+
+    listasum = list(zip(listaa,listasum))
+    return listasum
+
 def pregunta_04():
     """
     La columna 3 contiene una fecha en formato `YYYY-MM-DD`. Retorne la cantidad de
@@ -111,8 +112,18 @@ def pregunta_04():
     ]
 
     """
-    return
+    listaa = [z[2].split("-") for z in listadef[0:]]
+    b = sorted(list(set([z[1] for z in listaa])))
 
+    cuenta = []
+
+    for i in b:
+        w = ([z for z in listaa if z[1] == i])
+        cuenta.append(len(w))
+
+    cuenta = list(zip(b,cuenta))
+
+    return cuenta
 
 def pregunta_05():
     """
@@ -129,8 +140,18 @@ def pregunta_05():
     ]
 
     """
-    return
+    listaa = [z[0] for z in listadef[0:]]
+    listaa = sorted(list(set(listaa)))
 
+    maxi = []
+    mini = []
+    for i in listaa:
+        w = [int(z[1]) for z in listadef[0:] if z[0] == i]
+        maxi.append(max(w))
+        mini.append(min(w))
+
+    valor = list(zip(listaa,maxi,mini))
+    return valor
 
 def pregunta_06():
     """
